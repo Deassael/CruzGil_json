@@ -1,5 +1,4 @@
 <?php
-
 class conexion{
     public $host = '127.0.0.1';
     public $db = 'rrhh';
@@ -14,14 +13,12 @@ class conexion{
     ];
 
     public function conectar(){
-        try
+        try{
             $pdo = new PDO("msyql:host={$this->host};dbname={$this->db};charset={$this->charset};port={$this->port}",$this->user, $this->pass, $this->options);
             return $pdo;
         )catch(PDOException $exp){
             echo("HUBO UN ERROR EN LA CONEXION".$exp->getMessage());
         }
     }
-
 }
-
 ?>
